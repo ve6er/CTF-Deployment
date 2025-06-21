@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: ctfd
+    env: docker
+    plan: free
+    autoDeploy: true
+    region: oregon
+    dockerContext: .
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ctfd-db
+databases:
+  - name: ctfd-db
+    plan: free
