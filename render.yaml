@@ -3,7 +3,7 @@ services:
     name: ctfd
     env: docker
     plan: free
-    region: frankfurt
+    region: oregon
     dockerContext: .
     dockerfilePath: Dockerfile
     envVars:
