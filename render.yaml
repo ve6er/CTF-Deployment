@@ -3,8 +3,8 @@ services:
     name: ctfd
     env: docker
     plan: free
-    autoDeploy: true
     region: oregon
+    autoDeploy: true
     dockerContext: .
     dockerfilePath: Dockerfile
     envVars:
@@ -13,6 +13,8 @@ services:
       - key: DATABASE_URL
         fromDatabase:
           name: ctfd-db
+          property: connectionString
+
 databases:
   - name: ctfd-db
     plan: free
