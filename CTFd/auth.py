@@ -40,6 +40,8 @@ def confirm(data=None):
     if not get_config("verify_emails"):
         # If the CTF doesn't care about confirming email addresses then redierct to challenges
         return redirect(url_for("challenges.listing"))
+    else:
+        return redirect(url_for("challenges.listing"))
 
     # User is confirming email account
     if data and request.method == "GET":
